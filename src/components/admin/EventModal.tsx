@@ -13,7 +13,7 @@ interface EventModalProps {
   isOpen: boolean
   onClose: () => void
   onSubmit: (data: any) => Promise<void>
-  event?: Event
+  event?: Event | null
   onSuccess?: () => void
 }
 
