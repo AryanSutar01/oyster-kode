@@ -13,7 +13,7 @@ const featuredEvent = {
   location: 'RIT Video Conference Hall',
   type: 'Competition',
   registrationLink: 'https://vaishnavigaikwad25.github.io/Code404/',
-  thumbnail: '/images/events/code404.png'
+  thumbnail: '/images/events/Code404.png'
 }
 
 export default function FeaturedEvents() {

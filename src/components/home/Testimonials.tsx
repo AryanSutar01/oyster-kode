@@ -26,7 +26,7 @@ const demoTestimonials = [
     id: 3,
     name: 'Harshal Kumbhar',
     role: 'SDE Intern, RSquareSoft',
-    image: '/images/testimonials/Placeholder_1.jpg',
+    image: '/images/testimonials/placeholder_1.jpg',
     quote: 'The supportive community and mentorship opportunities at Oyster Kode Club have been invaluable for my growth as a developer.',
     rating: 5,
     gradient: 'from-[#E0C3FC] to-[#8EC5FC]' // Soft purple to blue

@@ -22,7 +22,7 @@ export default function Story() {
             className="relative h-[400px] rounded-2xl overflow-hidden group"
           >
             <Image
-              src="/images/about/story.jpg"
+              src="/images/about/Story.jpg"
               alt="Oyster Kode Club Story"
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-110"
