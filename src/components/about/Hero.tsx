@@ -46,6 +46,7 @@ export default function Hero() {
       }
 
       draw() {
+        if (!ctx) return
         ctx.fillStyle = this.color
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
@@ -61,6 +62,7 @@ export default function Hero() {
 
     // Animation loop
     const animate = () => {
+      if (!ctx) return
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       particles.forEach(particle => {
         particle.update()
