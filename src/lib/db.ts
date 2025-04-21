@@ -4,12 +4,13 @@ if (!process.env.MONGODB_URI) {
   throw new Error('Please add your MongoDB URI to .env.local');
 }
 
-// Extend the global type to include mongoose
+type MongooseConnection = {
+  conn: typeof mongoose | null;
+  promise: Promise<typeof mongoose> | null;
+};
+
 declare global {
-  var mongoose: {
-    conn: typeof mongoose | null;
-    promise: Promise<typeof mongoose> | null;
-  };
+  var mongoose: MongooseConnection;
 }
 
 let cached = global.mongoose;
@@ -37,7 +38,7 @@ async function dbConnect() {
 
     try {
       console.log('Attempting MongoDB connection...');
-      cached.promise = mongoose.connect(process.env.MONGODB_URI!, opts).then(mongoose => mongoose);
+      cached.promise = mongoose.connect(process.env.MONGODB_URI!, opts);
     } catch (error) {
       console.error('Error connecting to MongoDB:', error);
       
@@ -49,7 +50,7 @@ async function dbConnect() {
         );
         
         console.log('Attempting direct connection...');
-        cached.promise = mongoose.connect(directUri, opts).then(mongoose => mongoose);
+        cached.promise = mongoose.connect(directUri, opts);
       } else {
         throw error;
       }
