@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
-    "@react-three/drei": "^9.65.0",
-    "@react-three/fiber": "^8.13.0",
+    "@react-three/drei": "^9.88.0",
+    "@react-three/fiber": "^8.15.0",
     "@types/formidable": "^3.4.5",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/nodemailer": "^6.4.17",
