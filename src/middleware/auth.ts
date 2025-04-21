@@ -6,10 +6,14 @@ interface DecodedToken {
   username: string;
 }
 
+interface NextApiRequestWithUser extends NextApiRequest {
+  user: DecodedToken;
+}
+
 export function authMiddleware(
-  handler: (req: NextApiRequest, res: NextApiResponse) => Promise<void>
+  handler: (req: NextApiRequestWithUser, res: NextApiResponse) => Promise<void>
 ) {
-  return async (req: NextApiRequest, res: NextApiResponse) => {
+  return async (req: NextApiRequestWithUser, res: NextApiResponse) => {
     try {
       // Get token from header
       const token = req.headers.authorization?.replace('Bearer ', '');
