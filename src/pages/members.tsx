@@ -66,8 +66,8 @@ export default function Members() {
 
   // Sort members by role priority and alphabetically
   const sortedMembers = [...filteredMembers].sort((a, b) => {
-    // Define role priorities
-    const rolePriority = {
+    // Define role priorities with index signature
+    const rolePriority: { [key: string]: number } = {
       'President': 1,
       'Vice President': 2,
       'Secretary': 3

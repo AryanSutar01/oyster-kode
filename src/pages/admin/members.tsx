@@ -102,8 +102,9 @@ const Members: NextPage = () => {
     return matchesCategory && matchesDepartment && matchesYear && matchesSearch
   })
 
-  const handleDelete = async (id: string) => {
-    if (!confirm('Are you sure you want to delete this member?')) return
+  const handleDelete = async (id: string | undefined) => {
+    if (!id) return;
+    if (!confirm('Are you sure you want to delete this member?')) return;
 
     try {
       const token = localStorage.getItem('adminToken')
