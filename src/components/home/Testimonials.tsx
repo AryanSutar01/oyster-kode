@@ -105,13 +105,7 @@ export default function Testimonials() {
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
               className="group relative bg-white/5 backdrop-blur-lg border border-white/10 dark:bg-dark/50 rounded-2xl p-8"
             >
-              <div className="absolute -inset-px rounded-2xl bg-gradient-to-r opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10"
-                style={{
-                  backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))`,
-                  '--tw-gradient-from': '#A6C1EE',
-                  '--tw-gradient-to': '#FBC2EB',
-                }}
-              />
+              <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-[#A6C1EE] to-[#FBC2EB] opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10" />
               
               <div className="relative">
                 <div className="flex items-center mb-6">
