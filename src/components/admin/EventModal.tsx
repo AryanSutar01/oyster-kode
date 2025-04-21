@@ -232,7 +232,10 @@ const EventModal: React.FC<EventModalProps> = ({
                 </label>
                 <select
                   value={formData.category}
-                  onChange={(e) => setFormData(prev => ({ ...prev, category: e.target.value }))}
+                  onChange={(e) => setFormData(prev => ({ 
+                    ...prev, 
+                    category: e.target.value as 'workshop' | 'hackathon' | 'seminar' | 'competition' | 'other' 
+                  }))}
                   className="mt-1 block w-full rounded-xl border border-gray-200 dark:border-[#333333] 
                            bg-white dark:bg-[#252525] text-gray-900 dark:text-white px-4 py-2
                            focus:ring-2 focus:ring-ok-orange focus:border-transparent"
@@ -251,7 +254,10 @@ const EventModal: React.FC<EventModalProps> = ({
                 </label>
                 <select
                   value={formData.status}
-                  onChange={(e) => setFormData(prev => ({ ...prev, status: e.target.value }))}
+                  onChange={(e) => setFormData(prev => ({ 
+                    ...prev, 
+                    status: e.target.value as 'upcoming' | 'ongoing' | 'completed' | 'cancelled' 
+                  }))}
                   className="mt-1 block w-full rounded-xl border border-gray-200 dark:border-[#333333] 
                            bg-white dark:bg-[#252525] text-gray-900 dark:text-white px-4 py-2
                            focus:ring-2 focus:ring-ok-orange focus:border-transparent"
@@ -314,7 +320,7 @@ const EventModal: React.FC<EventModalProps> = ({
                       if (requirement.trim()) {
                         setFormData(prev => ({
                           ...prev,
-                          requirements: [...prev.requirements, requirement.trim()]
+                          requirements: [...(prev.requirements || []), requirement.trim()]
                         }))
                         setRequirement('')
                       }
@@ -325,7 +331,7 @@ const EventModal: React.FC<EventModalProps> = ({
                     Add
                   </button>
                 </div>
-                {formData.requirements.length > 0 && (
+                {formData.requirements && formData.requirements.length > 0 && (
                   <div className="mt-2 flex flex-wrap gap-2">
                     {formData.requirements.map((req, index) => (
                       <span
@@ -339,7 +345,7 @@ const EventModal: React.FC<EventModalProps> = ({
                           onClick={() => {
                             setFormData(prev => ({
                               ...prev,
-                              requirements: prev.requirements.filter((_, i) => i !== index)
+                              requirements: prev.requirements?.filter((_, i) => i !== index) || []
                             }))
                           }}
                           className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
