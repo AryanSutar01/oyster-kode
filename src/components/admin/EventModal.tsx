@@ -6,11 +6,14 @@ import { FiX } from 'react-icons/fi'
 import ImageUpload from './ImageUpload'
 import { toast } from 'react-hot-toast'
 
+// Import the Event type
+import type { Event } from '@/pages/admin/events'
+
 interface EventModalProps {
   isOpen: boolean
   onClose: () => void
   onSubmit: (data: any) => Promise<void>
-  event?: any
+  event?: Event
   onSuccess?: () => void
 }
 
