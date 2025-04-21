@@ -34,6 +34,8 @@ interface Event {
   featured: boolean
 }
 
+export type { Event }
+
 const categories = [
   { id: 'all', name: 'All Events' },
   { id: 'workshop', name: 'Workshops' },
